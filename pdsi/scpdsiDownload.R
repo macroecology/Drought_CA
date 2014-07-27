@@ -9,7 +9,7 @@
 library(XML)
 
 # Set directory 
-di <- '/Users/ajpeluLap/nceasGroup'
+di <- '/Users/ajpeluLap/myrepos/Drought_CA'
 urls <- read.table(paste(di,'/pdsi/urlsSCPDSI_CAstate.txt',sep='')) 
 
 # Create a empty data.frame
@@ -54,6 +54,6 @@ all.data <- rbind(all.data, df)
 
 # Export table  
 write.table(all.data,file=paste(di, '/pdsi/scpdsi_CAstate.txt', sep=""), 
-            sep="\t", col.names=TRUE)
+            sep="\t", col.names=TRUE, row.names = FALSE)
 
 
