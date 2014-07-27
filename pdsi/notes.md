@@ -14,12 +14,9 @@
 
 
 ## Output 
-* plot:
-** all months? 
-** june? 
+* plot: all months? june? 
 
-* map:
-** ??
+* map:??
 
 
 
