@@ -2,5 +2,6 @@
 .Rhistory
 .RData
 .DS_Store
+.Rproj
 *.csv
-*.tja
+
