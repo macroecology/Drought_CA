@@ -8,8 +8,8 @@
 
 ## Temporal resolution 
 * Frequency: month 
-* Star date: 1895
-* End data: 2014
+* Start date: 1895
+* End date: 2014
 * months: all? June? 
 
 ## Spatial Resolution
@@ -17,12 +17,9 @@
 
 
 ## Output 
-* plot:
-** all months? 
-** june? 
+* plot: all months? june? 
 
-* map:
-** ??
+* map:??
 
 
 
