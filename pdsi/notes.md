@@ -1,5 +1,8 @@
 # Some notes about PDSI 
 
+## URL 
+[West Wide Drought Tracker](http://www.wrcc.dri.edu/wwdt/)
+
 ## Variable
 * Set variable: PDSI or scPDSI
 
