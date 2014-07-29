@@ -1,0 +1,16 @@
+{
+    "contents" : "# Install the packages we need \ninstall.packages (\"adehabitat\")\ninstall.packages (\"raster\")\ninstall.packages (\"rgdal\")\ninstall.packages (\"RCurl\")\ninstall.packages (\"stringr\")\ninstall.packages (\"R.utils\")\n\n# load the packages we need \nlibrary (adehabitat)\nlibrary (raster)\nlibrary (rgdal)\nlibrary (RCurl)\nlibrary (stringr)\nlibrary (R.utils)\n\n# set the working directory\nsetwd (\"C:/Users/visitor/Sara/Drought\")\n\n# get a list of the files we should download from prism ftp\nyear<- 2000\nurl<- paste (\"ftp://prism.nacse.org/monthly/ppt/\", year, \"/\", sep=\"\")\nitems <- strsplit(getURL(url, .opts=curlOptions(ftplistonly=TRUE)), \"\\r\\n\")[[1]] \n\n# to tidy the list. \n# We only need to download the monthy files, \n# not the year file and also not all the files together\nfiles<- items [-c(grep(paste (year, \"_bil\", sep=\"\"), items), \n                  grep(paste (year, \"_all_bil\", sep=\"\"), items))]\n\n# to download files\nfilename <- files [1]\n\nfor (filename in files) {\n  sourcefile <- paste (url, filename, sep =\"\")\n  download.file(sourcefile, filename)\n}\n\n# we need to add the asc extension\n# for (filename in files){\n#  file.rename (filename, paste (filename, \".asc\", sep=\"\")) \n#}\n\n# to open the files, first unzip\ngetwd()\ngunzip(\"PRISM_ppt_stable_4kmM2_200006_bil.zip\", \n       destname= \"kk.bil\")\n\n# to check that they are ok, plot the bil file\nras<- raster (\"PRISM_ppt_stable_4kmM2_200002_bil.bil\")\nplot (ras)\n\n\nfolder<- \"C:/Users/visitor/Sara/Drought/\"\nfor (filename in files){\n   (paste (folder, files) \n  \n}\n",
+    "created" : 1406674193304.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4266135436",
+    "id" : "19175A95",
+    "lastKnownWriteTime" : 1406674213,
+    "path" : "~/Sara/Drought/Drought_CA/download_prism_precipitation.R",
+    "project_path" : "download_prism_precipitation.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
