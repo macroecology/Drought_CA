@@ -2,7 +2,11 @@ scPDSI
 ========================================================
 In this document we show our progress on scPDSI.
 
-### Objetives 
+### Objectives: 
+*How bad is current drought? How do drought patterns vary in space and time?
+*What is the spatial and temporal dynamics of drought?
+
+#### Download the data 
 Why do we need to create a script to download the data?
 - Take a look at this web: [West Wide Drought Tracker](http://www.wrcc.dri.edu/wwdt/time)
 - We create a script in .bash to do it, but why? 
@@ -31,6 +35,7 @@ head(mydf)
 ```
 
 
+#### Download the data
 
 ```r
 # Load packages 
@@ -46,6 +51,7 @@ library(mgcv)
 ```
 
 
+#### Temporal variation of scPDSI
 A first vision of scPDSI from 1895 to 2014 for CA state: 
 
 
@@ -150,7 +156,7 @@ r$response$url
 ```
 
 
-### What about the scPDSI by month? 
+#### What about the scPDSI by month? 
 
 ```r
 # Panel plot of the scPDSI by months  
@@ -235,7 +241,7 @@ p3
 
 ![plot of chunk panelPlotmonthtrends](figure/panelPlotmonthtrends.png) 
  
-## Interpretation and discussion of the results:
+### Interpretation and discussion of the results:
 * What month do we choose? 
 * What message do we want to communicate?
  * A frog, q knife and a bear in the room 
@@ -244,3 +250,4 @@ p3
 * What outputs do we want for scPDSI: 
  * A plot. Which? 
  * A map. What kind of map? 
+* Comments, suggestions, improvements 
