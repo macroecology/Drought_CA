@@ -8,6 +8,7 @@
 library(ggplot2)
 library(Kendall)
 library(plyr)
+library(mgcv)
 
 # Set directory 
 di <- '/Users/ajpeluLap/myrepos/Drought_CA'
@@ -62,15 +63,15 @@ mydf2 <- join(mydf, mks, by='month')
 
 # BN Plot 
 p2 <- ggplot(mydf2, aes(x=year, y=value)) +  ylab('scPDSI') +
-  geom_bar(stat = 'identity', colour='gray') +  geom_smooth(size=1.5)+ 
+  geom_bar(stat = 'identity', colour='gray') + geom_smooth(method="loess", se=FALSE) +
   facet_wrap(~month, ncol=4) + 
   geom_hline(aes(yintercept=-3), colour='red', linetype="dashed") + 
   geom_hline(aes(yintercept=-4, colour='red')) +
   theme_bw() +
   theme(legend.position = 'none', panel.grid.major.x = element_blank()) 
 
-p3 <- p2 + geom_text(aes(x=1940, y=4.5, label=label), size=4, family="Times", 
-                     face="italic")
+p2
+p3 <- p2 + geom_text(aes(x=1940, y=4.5, label=label), size=4)
 
 ggsave(p3,file=paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),height=10, width=9)
 p3
@@ -88,17 +89,17 @@ install_github("ropensci/plotly")
 library(plotly)
 
 ## Set credentials ()
-set_credentials_file(username="ajpelu", api_key="q31kj9i0t9")
+set_credentials_file(username="macroecologycagroup", api_key="m0q2weomht")
 
 py <- plotly()
 
 # Ploty of Drougth. Focused on the last year
 
 p0 <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + 
-  geom_point(stat = 'identity', colour='gray') +
+  geom_point(stat = 'identity', colour='gray') 
   
 
-py$ggplotly(p0)
+r <- py$ggplotly(p0)
 
 # Get url 
 r$response$url

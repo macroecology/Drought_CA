@@ -37,6 +37,12 @@ head(mydf)
 library(ggplot2)
 library(Kendall)
 library(plyr)
+library(mgcv)
+```
+
+```
+## Loading required package: nlme
+## This is mgcv 1.7-29. For overview type 'help("mgcv-package")'.
 ```
 
 
@@ -65,7 +71,10 @@ p0
 
 ```r
 p00 <- p0 + geom_smooth(method='gam', formula=y~s(x), se=FALSE)
+p00
 ```
+
+![plot of chunk droughtCA_gam](figure/droughtCA_gam.png) 
 
 Take a look in the last years 
 
@@ -73,18 +82,18 @@ Take a look in the last years
 ```
 ## [1] "Your credentials file:"
 ## $username
-## [1] "ajpelu"
+## [1] "macroecologycagroup"
 ## 
 ## $api_key
-## [1] "q31kj9i0t9"
+## [1] "m0q2weomht"
 ## 
 ## [1] "Now,"
 ## [1] "Your credentials file:"
 ## $username
-## [1] "ajpelu"
+## [1] "macroecologycagroup"
 ## 
 ## $api_key
-## [1] "q31kj9i0t9"
+## [1] "m0q2weomht"
 ```
 
 
@@ -93,7 +102,7 @@ py$ggplotly(p0p)
 ```
 
 <iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-				src="https://plot.ly/~ajpelu/5" width="600" frameBorder="0"></iframe>
+				src="https://plot.ly/~macroecologycagroup/10" width="600" frameBorder="0"></iframe>
 
 
 ### What about the scPDSI by month? 
@@ -167,17 +176,26 @@ mydf2 <- join(mydf, mks, by='month')
 
 ```r
 p2 <- ggplot(mydf2, aes(x=year, y=value)) +  ylab('scPDSI') +
-  geom_bar(stat = 'identity', colour='gray') +  geom_smooth(size=1.5) + 
+  geom_bar(stat = 'identity', colour='gray') +  geom_smooth(method='loess') + 
   facet_wrap(~month, ncol=4) + 
   geom_hline(aes(yintercept=-3), colour='red', linetype="dashed") + 
   geom_hline(aes(yintercept=-4, colour='red')) +
   theme_bw() +
   theme(legend.position = 'none', panel.grid.major.x = element_blank()) 
-p3 <- p2 + geom_text(aes(x=1940, y=4.5, label=label), size=4, family="Times", 
-                     face="italic")
+p3 <- p2 + geom_text(aes(x=1940, y=4.5, label=label), size=4)
 
 ggsave(p3,file=paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),height=10, width=9)
 p3
 ```
 
 ![plot of chunk panelPlotmonthtrends](figure/panelPlotmonthtrends.png) 
+ 
+## Interpretation and discussion of the results:
+* What month do we choose? 
+* What message do we want to communicate?
+ * A frog, q knife and a bear in the room 
+ * __Make your messages memorable__ 
+* How about entities? We only analyzed data from CA state.
+* What outputs do we want for scPDSI: 
+ * A plot. Which? 
+ * A map. What kind of map? 
