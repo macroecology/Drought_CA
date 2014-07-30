@@ -95,11 +95,10 @@ py <- plotly()
 
 # Ploty of Drougth. Focused on the last year
 
-p0 <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + 
+p0p <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + 
   geom_point(stat = 'identity', colour='gray') 
-  
 
-r <- py$ggplotly(p0)
+r <- py$ggplotly(p0p)
 
 # Get url 
 r$response$url

@@ -55,7 +55,7 @@ p00
 
 Take a look in the last years 
 
-``` {r echo=FALSE, message=FALSE, warning=FALSE}
+``` {r}
 ## Plot with plotly 
 
 ## Load and install need library
@@ -66,19 +66,17 @@ library(plotly)
 ## Set credentials ()
 set_credentials_file(username="macroecologycagroup", api_key="m0q2weomht")
 
-py <- plotly()
 
 # Ploty of Drougth. Focused on the last year
-p0p <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + geom_point(stat = 'identity', colour='gray') 
+py <- plotly()
+
+p0p <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + 
+  geom_point(stat = 'identity', colour='gray') 
 
 r <- py$ggplotly(p0p)
 
 # Get url 
 r$response$url
-```
-
-```{r plottyPlot, plotly=TRUE} 
-py$ggplotly(p0p)
 ```
 
 

@@ -251,6 +251,37 @@ p00
 
 <p>Take a look in the last years </p>
 
+<pre><code class="r">## Plot with plotly 
+
+## Load and install need library
+library(&#39;devtools&#39;)
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;devtools&#39;
+## 
+## The following objects are masked from &#39;package:utils&#39;:
+## 
+##     ?, help
+## 
+## The following object is masked from &#39;package:base&#39;:
+## 
+##     system.file
+</code></pre>
+
+<pre><code class="r">#install_github(&quot;ropensci/plotly&quot;)
+library(plotly)
+</code></pre>
+
+<pre><code>## Loading required package: RCurl
+## Loading required package: bitops
+## Loading required package: RJSONIO
+</code></pre>
+
+<pre><code class="r">## Set credentials ()
+set_credentials_file(username=&quot;macroecologycagroup&quot;, api_key=&quot;m0q2weomht&quot;)
+</code></pre>
+
 <pre><code>## [1] &quot;Your credentials file:&quot;
 ## $username
 ## [1] &quot;macroecologycagroup&quot;
@@ -267,11 +298,20 @@ p00
 ## [1] &quot;m0q2weomht&quot;
 </code></pre>
 
-<pre><code class="r">py$ggplotly(p0p)
+<pre><code class="r"># Ploty of Drougth. Focused on the last year
+py &lt;- plotly()
+
+p0p &lt;- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + 
+  geom_point(stat = &#39;identity&#39;, colour=&#39;gray&#39;) 
+
+r &lt;- py$ggplotly(p0p)
+
+# Get url 
+r$response$url
 </code></pre>
 
-<iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-                src="https://plot.ly/~macroecologycagroup/10" width="600" frameBorder="0"></iframe>
+<pre><code>## NULL
+</code></pre>
 
 <h3>What about the scPDSI by month?</h3>
 

@@ -79,6 +79,42 @@ p00
 Take a look in the last years 
 
 
+```r
+## Plot with plotly 
+
+## Load and install need library
+library('devtools')
+```
+
+```
+## 
+## Attaching package: 'devtools'
+## 
+## The following objects are masked from 'package:utils':
+## 
+##     ?, help
+## 
+## The following object is masked from 'package:base':
+## 
+##     system.file
+```
+
+```r
+#install_github("ropensci/plotly")
+library(plotly)
+```
+
+```
+## Loading required package: RCurl
+## Loading required package: bitops
+## Loading required package: RJSONIO
+```
+
+```r
+## Set credentials ()
+set_credentials_file(username="macroecologycagroup", api_key="m0q2weomht")
+```
+
 ```
 ## [1] "Your credentials file:"
 ## $username
@@ -96,13 +132,22 @@ Take a look in the last years
 ## [1] "m0q2weomht"
 ```
 
-
 ```r
-py$ggplotly(p0p)
+# Ploty of Drougth. Focused on the last year
+py <- plotly()
+
+p0p <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + 
+  geom_point(stat = 'identity', colour='gray') 
+
+r <- py$ggplotly(p0p)
+
+# Get url 
+r$response$url
 ```
 
-<iframe height="600" id="igraph" scrolling="no" seamless="seamless"
-				src="https://plot.ly/~macroecologycagroup/10" width="600" frameBorder="0"></iframe>
+```
+## NULL
+```
 
 
 ### What about the scPDSI by month? 
