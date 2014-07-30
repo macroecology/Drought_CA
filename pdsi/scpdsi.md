@@ -139,31 +139,17 @@ mydf2 <- join(mydf, mks, by='month')
 
 ```r
 p2 <- ggplot(mydf2, aes(x=year, y=value)) +  ylab('scPDSI') +
-  geom_bar(stat = 'identity', colour='gray') +  geom_smooth(size=1.5)+ 
-  geom_text(aes(x=1940, y=4.5, label=label), size=4)+
+  geom_bar(stat = 'identity', colour='gray') +  geom_smooth(size=1.5) + 
   facet_wrap(~month, ncol=4) + 
   geom_hline(aes(yintercept=-3), colour='red', linetype="dashed") + 
   geom_hline(aes(yintercept=-4, colour='red')) +
   theme_bw() +
   theme(legend.position = 'none', panel.grid.major.x = element_blank()) 
+p3 <- p2 + geom_text(aes(x=1940, y=4.5, label=label), size=4, family="Times", 
+                     face="italic")
 
-# pdf(paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),height=10, width=9)
-print(p2)
-```
-
-```
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
-## geom_smooth: method="auto" and size of largest group is <1000, so using loess. Use 'method = x' to change the smoothing method.
+ggsave(p3,file=paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),height=10, width=9)
+p3
 ```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 

@@ -63,15 +63,17 @@ mydf2 <- join(mydf, mks, by='month')
 # BN Plot 
 p2 <- ggplot(mydf2, aes(x=year, y=value)) +  ylab('scPDSI') +
   geom_bar(stat = 'identity', colour='gray') +  geom_smooth(size=1.5)+ 
-  geom_text(aes(x=1940, y=4.5, label=label), size=4)+
   facet_wrap(~month, ncol=4) + 
   geom_hline(aes(yintercept=-3), colour='red', linetype="dashed") + 
   geom_hline(aes(yintercept=-4, colour='red')) +
   theme_bw() +
   theme(legend.position = 'none', panel.grid.major.x = element_blank()) 
 
-pdf(paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),height=10, width=9)
-print(p2)
+p3 <- p2 + geom_text(aes(x=1940, y=4.5, label=label), size=4, family="Times", 
+                     face="italic")
+
+ggsave(p3,file=paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),height=10, width=9)
+p2
 dev.off() 
 
 
