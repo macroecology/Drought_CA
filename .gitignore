@@ -1,9 +1,9 @@
-.Rproj.user
+*.Rproj.user
 .Rhistory
 .RData
 .DS_Store
-.Rproj
+*.Rproj
 *.csv
 *.txt
 *.gz
-*.doc
+*.docx
