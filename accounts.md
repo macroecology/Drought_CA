@@ -6,5 +6,5 @@
 
 ##### plot.ly
 * [plot.ly](https://plot.ly/)
-* _user_: macroecologycagroup@gmail.com
+* _user_: macroecologycagroup
 * _pass_: droughtOSS2014 
