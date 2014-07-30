@@ -60,12 +60,40 @@ p0 <- ggplot(mydf, aes(x=year, y=value)) +
 p0
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk droughtCA](figure/droughtCA.png) 
 
 
 ```r
 p00 <- p0 + geom_smooth(method='gam', formula=y~s(x), se=FALSE)
 ```
+
+Take a look in the last years 
+
+
+```
+## [1] "Your credentials file:"
+## $username
+## [1] "ajpelu"
+## 
+## $api_key
+## [1] "q31kj9i0t9"
+## 
+## [1] "Now,"
+## [1] "Your credentials file:"
+## $username
+## [1] "ajpelu"
+## 
+## $api_key
+## [1] "q31kj9i0t9"
+```
+
+
+```r
+py$ggplotly(p0p)
+```
+
+<iframe height="600" id="igraph" scrolling="no" seamless="seamless"
+				src="https://plot.ly/~ajpelu/5" width="600" frameBorder="0"></iframe>
 
 
 ### What about the scPDSI by month? 
@@ -89,7 +117,7 @@ p1 <- ggplot(mydf, aes(x=year, y=value, fill=sign)) +
 p1 
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
+![plot of chunk panelPlotmonth](figure/panelPlotmonth.png) 
 
 And, how about the temporal trend of the scPDSI? 
 
@@ -152,4 +180,4 @@ ggsave(p3,file=paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),hei
 p3
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
+![plot of chunk panelPlotmonthtrends](figure/panelPlotmonthtrends.png) 

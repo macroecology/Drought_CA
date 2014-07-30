@@ -23,8 +23,8 @@ p0 <- ggplot(mydf, aes(x=year, y=value)) +
   geom_hline(yintercept=0, colour='black') + ylab('scPDSI') +
   theme(legend.position = 'none', panel.grid.major.x = element_blank()) +
   theme_bw() 
-pdf(paste(di,'/pdsi/figure/CA_drougth.pdf', sep=''),height=5, width=8)
-p0 + geom_smooth(method='gam', formula=y~s(x), se=FALSE)
+# pdf(paste(di,'/pdsi/figure/CA_drougth.pdf', sep=''),height=5, width=8)
+p0 + geom_smooth(method="gam", formula=y~s(x), se=FALSE)
 dev.off() 
 
 # Panel plot of the scPDSI by months  
@@ -73,14 +73,35 @@ p3 <- p2 + geom_text(aes(x=1940, y=4.5, label=label), size=4, family="Times",
                      face="italic")
 
 ggsave(p3,file=paste(di,'/pdsi/figure/panelPlotCA_month_trends.pdf', sep=''),height=10, width=9)
-p2
+p3
 dev.off() 
 
 
 
+################ 
+## Plot with plotly 
 
+## Load and install need library
+library('devtools')
+install_github("ropensci/plotly")
 
+library(plotly)
 
+## Set credentials ()
+set_credentials_file(username="ajpelu", api_key="q31kj9i0t9")
+
+py <- plotly()
+
+# Ploty of Drougth. Focused on the last year
+
+p0 <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + 
+  geom_point(stat = 'identity', colour='gray') +
+  
+
+py$ggplotly(p0)
+
+# Get url 
+r$response$url
 
 
 

@@ -30,7 +30,7 @@ library(plyr)
 
 A first vision of scPDSI from 1895 to 2014 for CA state: 
 
-```{r fig.width=7, fig.height=6, warning=FALSE}
+```{r droughtCA, fig.width=7, fig.height=6, warning=FALSE}
 # create a variable to colour the bars of the plot 
 mydf$sign <- ifelse(mydf[['value']] >= 0, 'positive', 'negative')
 
@@ -47,13 +47,36 @@ p0 <- ggplot(mydf, aes(x=year, y=value)) +
 p0
 ```
 
-```{r fig.width=7, fig.height=6, warning=FALSE}
+```{r droughtCA_gam, fig.width=7, fig.height=6, warning=FALSE}
 p00 <- p0 + geom_smooth(method='gam', formula=y~s(x), se=FALSE)
+```
+
+Take a look in the last years 
+
+``` {r echo=FALSE, message=FALSE, warning=FALSE}
+## Plot with plotly 
+
+## Load and install need library
+library('devtools')
+#install_github("ropensci/plotly")
+library(plotly)
+
+## Set credentials ()
+set_credentials_file(username="ajpelu", api_key="q31kj9i0t9")
+
+py <- plotly()
+
+# Ploty of Drougth. Focused on the last year
+p0p <- ggplot(mydf, aes(x=mydf$year, y=mydf$value)) + geom_point(stat = 'identity', colour='gray') 
+```
+
+```{r plottyPlot, plotly=TRUE} 
+py$ggplotly(p0p)
 ```
 
 
 ### What about the scPDSI by month? 
-```{r fig.width=9, fig.height=8, warning=FALSE}  
+```{r panelPlotmonth, fig.width=9, fig.height=8, warning=FALSE}  
 # Panel plot of the scPDSI by months  
 # create a variable to colour the bars of the plot 
 mydf$sign <- ifelse(mydf[['value']] >= 0, 'positive', 'negative')
@@ -97,7 +120,7 @@ But... what about do we put together the plot and the temporal trends?
 mydf2 <- join(mydf, mks, by='month')
 ```
 
-```{r fig.width=12, fig.height=10, warning=FALSE, message=FALSE}
+```{r panelPlotmonthtrends, fig.width=12, fig.height=10, warning=FALSE, message=FALSE}
 p2 <- ggplot(mydf2, aes(x=year, y=value)) +  ylab('scPDSI') +
   geom_bar(stat = 'identity', colour='gray') +  geom_smooth(size=1.5) + 
   facet_wrap(~month, ncol=4) + 
