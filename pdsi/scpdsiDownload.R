@@ -6,7 +6,8 @@
 ## @ajpelu 
 
 # Load packages 
-library(XML)
+library('XML')
+library('stringr')
 
 # Set directory 
 di <- '/Users/ajpeluLap/myrepos/Drought_CA'
@@ -53,7 +54,7 @@ all.data <- rbind(all.data, df)
 } 
 
 # Export table  
-write.table(all.data,file=paste(di, '/pdsi/scpdsi_CAstate.txt', sep=""), 
+write.table(all.data,file=paste(di, '/pdsi/scpdsi_CAstate.csv', sep=""), 
             sep="\t", col.names=TRUE, row.names = FALSE)
 
 
