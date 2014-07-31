@@ -3,7 +3,4 @@
 .RData
 .DS_Store
 *.Rproj
-*.csv
-*.txt
 *.gz
-*.docx
