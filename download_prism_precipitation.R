@@ -12,16 +12,7 @@ library (RCurl)
 library (stringr)
 library (maptools)
 
-# to obtain a shapefile with California, we select the polygon of California, 
-# we will use this after obtaining the prism maps to clip the map to California
 
-library (maptools)
-cali<- readShapeSpatial ("C:/Users/visitor/Sara/Drought/USA_adm1.shp")
-class (cali)
-names (cali)
-head (cali)
-california<- cali [cali$NAME_1 == "California", ]
-plot (california)
 
 # set the working directory
 # get a list of the files we should download from prism ftp
@@ -50,12 +41,19 @@ download.file(sourcefile, filename, method = "auto")
 unzip (filename)  
 }
 
-# to check that they are ok, plot the bil file
+# mask the usa maps with california to obtain a map of california
+
+cali<- readShapeSpatial ("C:/Users/visitor/Sara/Drought/USA_adm1.shp")
+class (cali)
+names (cali)
+head (cali)
+california<- cali [cali$NAME_1 == "California", ]
+plot (california)
 name<- paste (substr (filename, 1, nchar(filename)-4), ".bil", sep="")
 ras<- raster (name)
 plot (ras)
 
-# mask the usa maps with california to obtain a map of california
+
 mapa<- mask (ras, california)
 plot (mapa, xlim =c(-125, -112), ylim =c(30, 45), main=filename)
 
