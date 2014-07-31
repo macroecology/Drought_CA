@@ -58,3 +58,5 @@ plot (ras)
 # mask the usa maps with california to obtain a map of california
 mapa<- mask (ras, california)
 plot (mapa, xlim =c(-125, -112), ylim =c(30, 45), main=filename)
+
+str (mapa)
