@@ -5,14 +5,15 @@ date: "Thursday, July 31, 2014"
 output: ioslides_presentation
 ---
 
-
 ## Introduction
 
 ![](C:\Users\visitor\Desktop\Sara\Drought\California-Drought-2014.png)
 
 
-## More Introduction (Leah)
-![more drought](http://github.com/macroecology/Drought_CA/blob/master/nodivingfrombridge.png)
+## 
+
+<img src= "C:\Users\visitor\Sara\Drought\nodivingfrombridge.png" width="850px" height="500px" />
+
 
 
 ## Objectives
@@ -38,13 +39,7 @@ output: ioslides_presentation
 
 ## 2 How much has the carbon sink strength been reduced by the current drought?
 
-![fg](https://github.com/macroecology/Drought_CA/blob/master/Carbon sink_2.png)
-
-
-![fg](https://github.com/macroecology/Drought_CA/blob/master/Carbon sink_2.png)
-
-
-![fg](https://github.com/macroecology/Drought_CA/blob/master/Carbon sink_2.png)
+<img src= "C:\Users\visitor\Sara\Drought\Carbonsink_3.png" width="850px" height="500px" />
 
 ## 
 Data:
