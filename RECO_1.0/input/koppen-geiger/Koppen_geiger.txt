@@ -1,0 +1,10 @@
+Original Koppen-Geiger climate clssification was retrieved from here:
+
+ORNL (2010) Oak Ridge National Laboratory Distributed Active Archive Center (ORNL DAAC), 
+World Map of the Koppen-Geiger Climate Classification. Available online [http://webmap.ornl.gov/wcsdown/dataset.jsp?ds_id=10012] 
+from ORNL DAAC, Oak Ridge, Tennessee, U.S.A. (Accessed 10 February 2011).
+
+We aggregated it to the following calsses: 1 = Temperature limited, 2 = Temperate/Humid, 3 = Mediterranean, 0 = Other.
+Temperature limited: ("Dfc","Dfd","Dsc","Dsd","Dwc","Dwd","ET","EF","H","BSk")
+Temperate/Humid: ("Csb","Cfa","Cfb","Cfc","Csc","Cwa","Cwb","Cwc","Dfa","Dfb","Dsa","Dsb","Dwa","Dwb"),
+Mediterranean: ("Csa","BSh"),c("Af","Am","As","Aw")
