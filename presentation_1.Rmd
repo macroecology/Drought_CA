@@ -15,6 +15,13 @@ output: ioslides_presentation
 <img src= "C:\Users\visitor\Sara\Drought\nodivingfrombridge.png" width="850px" height="500px" />
 
 
+##
+<img src= "C:\Users\visitor\Sara\Drought\Drought_CA\presentation\CaliforniaDrought.jpg" width="600px" height="500px" />
+
+##
+
+<img src= "C:\Users\visitor\Sara\Drought\Drought_CA\presentation\BtrORVHIMAAr2Ys.jpg" width="600px" height="500px" />
+
 
 ## Objectives
 
@@ -41,29 +48,32 @@ output: ioslides_presentation
 
 <img src= "C:\Users\visitor\Sara\Drought\Carbonsink_3.png" width="600px" height="500px" />
 
-##
 
 
 ##
+<img src= "C:\Users\visitor\Sara\Drought\Drought_CA\presentation\slides_modis.jpg" width="400px" height="400px" />
 
 Data:
-Amareiflux Data (NEE, GEE, Reco)
-Modis (EVI, LST)
+ - Amareiflux Data (NEE, GEE, Reco)
+ - Modis (EVI, LST)
 
 Objective: Examine changes in CO2 sequestration (NEE) for the entire state of CA and determine how drought impacts CO2 dynamics in natural and agricultural ecosystems
 
 ## Reco estimation validate Modis derived GPP
-
+<img src= "C:\Users\visitor\Sara\Drought\Drought_CA\presentation\slide_reco.jpg" width="600px" height="500px" />
 
 ## 3 Are natural systems more resilient than agricultural systems to drought?
-Data: Modis derived NPP, Rainfall (PRISM), CROP map (cdl)
-Objectives: Comparing (map) resilience (differences in Cg/rain mm) in natural and Agricultural systems 
+
+  - Modis derived NPP,
+  - Rainfall (PRISM),
+  - CROP map (cdl)
+  - Objectives: Comparing (map) resilience (differences in Cg/rain mm) in natural and Agricultural systems 
 
 ## 4 What are the impacts of drought on ecosystem services?
-Carbon sink?
-Crop yield?
-Water?
+  - Carbon sink?
+  - Crop yield?
+  - Water?
 
-## our approach - future work
+## thank you very much!
 
 
