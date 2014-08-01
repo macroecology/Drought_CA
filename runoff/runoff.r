@@ -29,10 +29,12 @@ p <- ggplot(ro.annual, aes(year, annual.pctchnge, group = 1)) +
     xlab("Year") +
     ylab("Change in runoff (%)") +
     theme_bw() + 
-    scale_x_continuous(limits = c(1998, 2014), 
-    breaks = c(1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014))  +
+    scale_x_continuous(limits = c(1996, 2014), 
+    breaks = c(1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014))  +
     scale_y_continuous(limits = c(-70, 105), 
     breaks = c(-60, -40, -20, 0, 20, 40, 60, 80, 100)) +
-    geom_hline(yintercept = 0, linetype = "dashed", size = 0.2)
-    
+    geom_hline(yintercept = 0, linetype = "dashed", size = 0.2) +
+    theme(axis.title.x = element_text(vjust = 0.05))
+
+ggsave('CA_runoff.pdf', width = 7, height = 4)     
     
