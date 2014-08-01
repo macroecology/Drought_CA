@@ -8,14 +8,11 @@ output: ioslides_presentation
 
 ## Introduction
 
-Pictures of drought. Leah speaking!
-droughtcalifornia.jpg
+![](C:\Users\visitor\Desktop\Sara\Drought\California-Drought-2014.png)
 
 
 ## More Introduction (Leah)
-
-more recent drought figure
-past studies have shown that drought reduces carbon sink
+![more drought](http://github.com/macroecology/Drought_CA/blob/master/nodivingfrombridge.png)
 
 
 ## Objectives
@@ -41,7 +38,13 @@ past studies have shown that drought reduces carbon sink
 
 ## 2 How much has the carbon sink strength been reduced by the current drought?
 
-![fg](C:\Users\visitor\Sara\Drought\)
+![fg](https://github.com/macroecology/Drought_CA/blob/master/Carbon sink_2.png)
+
+
+![fg](https://github.com/macroecology/Drought_CA/blob/master/Carbon sink_2.png)
+
+
+![fg](https://github.com/macroecology/Drought_CA/blob/master/Carbon sink_2.png)
 
 ## 
 Data:
