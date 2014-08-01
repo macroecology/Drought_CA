@@ -39,9 +39,13 @@ output: ioslides_presentation
 
 ## 2 How much has the carbon sink strength been reduced by the current drought?
 
-<img src= "C:\Users\visitor\Sara\Drought\Carbonsink_3.png" width="850px" height="500px" />
+<img src= "C:\Users\visitor\Sara\Drought\Carbonsink_3.png" width="600px" height="500px" />
 
-## 
+##
+
+
+##
+
 Data:
 Amareiflux Data (NEE, GEE, Reco)
 Modis (EVI, LST)
@@ -50,7 +54,6 @@ Objective: Examine changes in CO2 sequestration (NEE) for the entire state of CA
 
 ## Reco estimation validate Modis derived GPP
 
-## paper global change biology
 
 ## 3 Are natural systems more resilient than agricultural systems to drought?
 Data: Modis derived NPP, Rainfall (PRISM), CROP map (cdl)
@@ -63,16 +66,4 @@ Water?
 
 ## our approach - future work
 
-
-## Slide with R Code and Output
-
-```coffee
-summary(cars)
-```
-
-## Slide with Plot
-
-```{r}
-plot(cars)
-```
 
