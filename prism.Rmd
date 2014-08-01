@@ -7,6 +7,11 @@ output: ioslides_presentation
 
 ## CODE TO DOWNLOAD THE DATA FROM PRISM 
 
+**subtitle** 
+
+skjdhgiushgiusdhg
+
+
 ## load the functions that we are going to use
 
 ```coffee
@@ -32,10 +37,11 @@ library (maptools)
 setwd("C:/Users/visitor/Sara/Drought/ppt")
 for (year in 2000:2013){
   url<- paste ("ftp://prism.nacse.org/monthly/ppt/", year, "/", sep="")
-  items <- strsplit(getURL(url, .opts=curlOptions(ftplistonly=TRUE)), "\r\n")[[1]] 
+  items <- strsplit(getURL(url, .opts=curlOptions(ftplistonly=TRUE)), 
+  "\r\n")[[1]] 
   filename<- items [grep(paste (year, "_bil", sep=""), items)]
-  # there is a bug in RStudio, if the downloaded files are corrupt, 
-  # you should go to 
+  # there is a "bug" in RStudio,
+  # to download files from a ftp you should go to 
   # Tools > Global Options > Packages, and unselect 
   # "Use Internet Explorer library/proxy for HTTP"
   # to open the files
@@ -47,7 +53,8 @@ for (year in 2000:2013){
 
 ## Slide with Bullets
 
-- Bullet 1
+
+
 - Bullet 2
 - Bullet 3
 
