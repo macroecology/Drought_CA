@@ -36,5 +36,5 @@ p <- ggplot(ro.annual, aes(year, annual.pctchnge, group = 1)) +
     geom_hline(yintercept = 0, linetype = "dashed", size = 0.2) +
     theme(axis.title.x = element_text(vjust = 0.05))
 
-ggsave('CA_runoff.pdf', width = 7, height = 4)     
+ggsave('CA_runoff.png', width = 7, height = 4)     
     
