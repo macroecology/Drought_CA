@@ -7,6 +7,7 @@ setwd('c:/download_modis')
 # loading the source of function (the script file should be copied in the working directory):
 
 source('http://r-gis.net/ModisDownload/ModisDownload.R')
+load ('http://r-gis.net/ModisDownload/ModisLP.RData')
 
 library(raster)
 
@@ -15,6 +16,8 @@ library(RCurl)
 # product list:
 
 modisProducts( )
+
+load('ModisLP.RData')
 
 x="MOD11A2"
 

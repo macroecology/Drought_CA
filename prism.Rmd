@@ -1,0 +1,61 @@
+---
+title: "prism"
+author: "Drought_CA"
+date: "Thursday, July 31, 2014"
+output: ioslides_presentation
+---
+
+## CODE TO DOWNLOAD THE DATA FROM PRISM 
+
+## load the functions that we are going to use
+
+```coffee
+# Install the packages we need
+install.packages ("raster")
+install.packages ("rgdal")
+install.packages ("RCurl")
+install.packages ("stringr")
+install.packages ("rgeos")
+install.packages ("maptools")
+
+# load the packages we need 
+library (raster)
+library (rgdal)
+library (RCurl)
+library (stringr)
+library (maptools)
+```
+
+## Set the working directory to store the climatic layer ppt that we are going to pull from the web repository, and pull the data
+
+```coffee
+setwd("C:/Users/visitor/Sara/Drought/ppt")
+for (year in 2000:2013){
+  url<- paste ("ftp://prism.nacse.org/monthly/ppt/", year, "/", sep="")
+  items <- strsplit(getURL(url, .opts=curlOptions(ftplistonly=TRUE)), "\r\n")[[1]] 
+  filename<- items [grep(paste (year, "_bil", sep=""), items)]
+  # there is a bug in RStudio, if the downloaded files are corrupt, 
+  # you should go to 
+  # Tools > Global Options > Packages, and unselect 
+  # "Use Internet Explorer library/proxy for HTTP"
+  # to open the files
+  sourcefile <- paste (url, filename, sep ="")
+  download.file(sourcefile, filename, method = "auto")
+  unzip (filename)  
+}
+```
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+
+## Slide with Plot
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+## Slide with Bullets
