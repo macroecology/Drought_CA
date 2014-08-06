@@ -2,7 +2,7 @@
 title: "California drought - How bad is it?"
 author: "Drought Group"
 date: "Thursday, July 31, 2014"
-output: ioslides_presentation
+output: beamer_presentation
 ---
 
 ## Introduction
