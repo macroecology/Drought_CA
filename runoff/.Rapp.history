@@ -1,394 +1,0 @@
-cite()
-citation()
-?nls()
-?Hmisc
-??Hmisc
-?errbar
-library(ggplot2)
-install.packages("ggplot2")
-library("ggplot2")
-install.packages("ggthemes")
-install.packages("plyr")
-install.packages('reshape2')
-library(ggplot2)
-head(diamonds)
-library(ggplot2)
-diamonds
-library(reshape2)
-library(ggplot2)
-library(reshape2)
-level()
-??level()
-??levels
-?levels()
-plot code for live biomass carbon scatterplot with dotted line for averagep1 <- ggplot(Cstorage, aes(MAT, total.LB)) + #figure with MAT on x-axis and LB on y-axis	geom_point(shape = 1, size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.a) + #custom x-axis label	ylab(my.ylab.a) + #custom y-axis label	theme_classic() + #classic theme: b/w, no gridlines, no border	geom_hline(yintercept = 256, linetype = "dashed") + #dashed horizontal line at y = 256 	annotate("text", size = 3, x = 14, y = 599, label = r2.a, parse = TRUE) +	annotate("text", size = 3, x = 14, y = 550, label = pval.a, parse = TRUE)#plot code for detritus carbon scatterplot with regression linep2 <- ggplot(Cstorage, aes(MAT, total.detritus)) + #figure with MAT on x-axis and  on y-axis	geom_point(size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.b) + #custom x-axis label	ylab(my.ylab.b) + #custom y-axis label	theme_classic() + #classic theme: b/w, no gridlines, no border	geom_smooth(method
-= lm) + # regression line with NO 95% conf. region 	annotate("text", size = 3, x = 14, y = 599, label = r2.b, parse = TRUE) +	annotate("text", size = 3, x = 14, y = 550, label = pval.b, parse = TRUE)
-library(ggplot2)
-?theme()
-p <- qplot(mpg, wt, data = mtcars)#
-p#
-p + theme(panel.background = element_rect(colour = "pink"))#
-p + theme_bw()
-p <- qplot(mpg, wt, data = mtcars)#
-#
-p + theme(panel.background = element_rect(colour = "pink"))
-plot code for live biomass carbon scatterplot with dotted line for averagep1 <- ggplot(Cstorage, aes(MAT, total.LB)) + #figure with MAT on x-axis and LB on y-axis	geom_point(shape = 1, size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.a) + #custom x-axis label	ylab(my.ylab.a) + #custom y-axis label	theme_classic() + #classic theme: b/w, no gridlines, no border	geom_hline(yintercept = 256, linetype = "dashed") + #dashed horizontal line at y = 256 	annotate("text", size = 3, x = 14, y = 599, label = r2.a, parse = TRUE) +	annotate("text", size = 3, x = 14, y = 550, label = pval.a, parse = TRUE) +	theme(axis.title.x = element_text(vjust = 0)) +	theme(axis.title.y = element_text(vjust = 0.7))#
-#plot code for detritus carbon scatterplot with regression linep2 <- ggplot(Cstorage, aes(MAT, total.detritus)) + #figure with MAT on x-axis and  on y-axis	geom_point(size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.b) + #custom x-axis label	ylab(my.ylab.b) + #custom y-axis label	theme_classic() + #classic theme: b/w, no gridlines, no border	geom_smooth(method = lm) + # regression line with NO 95% conf. region 	annotate("text", size = 3, x = 14, y = 599, label = r2.b, parse = TRUE) +	annotate("text", size = 3, x = 14, y = 550, label = pval.b, parse = TRUE) +	theme(axis.title.x = element_text(vjust = 0.1)) + #axis title closer to y-axis	theme(axis.title.y = element_text(vjust = 0.7))  #axis title further from x-axis#open PDF device, specify file name, window size and font sizepdf(file = "ggplot2 MAT_C_Fig1.pdf", width = 3.75, height = 7)#plot both graphs on one pagelibrary(gridExtra) #to arrange graphsgrid.arrange(arrangeGrob(p1, p2), ncol =1)dev.off() #close connect
-ion to hard drive#save graph page as .pdf
-p1 <- ggplot(Cstorage, aes(MAT, total.LB)) + #figure with MAT on x-axis and LB on y-axis	geom_point(shape = 1, size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.a) + #custom x-axis label	ylab(my.ylab.a) + #custom y-axis label	theme_classic() + #classic theme: b/w, no gridlines, no border	geom_hline(yintercept = 256, linetype = "dashed") + #dashed horizontal line at y = 256 	annotate("text", size = 3, x = 14, y = 599, label = r2.a, parse = TRUE) +	annotate("text", size = 3, x = 14, y = 550, label = pval.a, parse = TRUE) +	theme(axis.title.x = element_text(vjust = 0)) +	theme(axis.title.y = element_text(vjust = 0.7))
-p1 <- ggplot(Cstorage, aes(MAT, total.LB)) + #figure with MAT on x-axis and LB on y-axis	geom_point(shape = 1, size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.a) + #custom x-axis label	ylab(my.ylab.a) + #custom y-axis label	theme_bw() + #classic theme: b/w, no gridlines, no border	geom_hline(yintercept = 256, linetype = "dashed") + #dashed horizontal line at y = 256 	geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = 218, ymax = 294), fill = 'gray80', alpha = 0.05) + 	annotate("text", size = 3, x = 17.5, y = 590, label = r2.a, parse = TRUE) +	annotate("text", size = 3, x = 17.5, y = 550, label = pval.a, parse = TRUE) +
-theme(axis.title.x = element_text(vjust = 0)) +	theme(axis.title.y = element_text(vjust = 0.7))
-p1 <- ggplot(Cstorage, aes(MAT, total.LB)) + #figure with MAT on x-axis and LB on y-axis	geom_point(shape = 1, size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.a) + #custom x-axis label	ylab(my.ylab.a) + #custom y-axis label	theme_bw() + #classic theme: b/w, no gridlines, no border	geom_hline(yintercept = 256, linetype = "dashed") + #dashed horizontal line at y = 256 	geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = 218, ymax = 294), fill = 'gray80', alpha = 0.05) + 	annotate("text", size = 3, x = 17.5, y = 590, label = r2.a, parse = TRUE) +	annotate("text", size = 3, x = 17.5, y = 550, label = pval.a, parse = TRUE) +	annotate("text", size = 4, x = 13.1, y = 600, label = "(a)") +	theme(axis.title.x = element_text(vjust = 0)) +	theme(axis.title.y = element_text(vjust = 0.7))
-p1 <- ggplot(Cstorage, aes(MAT, total.LB)) + #figure with MAT on x-axis and LB on y-axis	geom_point(shape = 1, size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.a) + #custom x-axis label	ylab(my.ylab.a) + #custom y-axis label	theme_bw() + #black & white theme with faint gridlines	geom_hline(yintercept = 256, linetype = "dashed") + #dashed horizontal line at y = 256 	geom_rect(aes(xmin = -Inf, xmax = Inf, ymin = 218, ymax = 294), fill = 'gray80', alpha = 0.05) + 	annotate("text", size = 3, x = 17.5, y = 599, label = r2.a, parse = TRUE) +	annotate("text", size = 3, x = 17.5, y = 550, label = pval.a, parse = TRUE) +	annotate("text", size = 4, x = 13.1, y = 600, label = "(a)") +	theme(axis.title.x = element_text(vjust = 0)) +	theme(axis.title.y = element_text(vjust = 0.7))#
-#plot code for detritus carbon scatterplot with regression linep2 <- ggplot(Cstorage, aes(MAT, total.detritus)) + #figure with MAT on x-axis and  on y-axis	geom_point(size = 3) + #scatterplot with open circles	ylim(0, 600) +	xlab(my.xlab.b) + #custom x-axis label	ylab(my.ylab.b) + #custom y-axis label	theme_bw() + #black & white theme with faint gridlines	geom_smooth(method = lm) + # regression line with NO 95% conf. region 	annotate("text", size = 3, x = 17.5, y = 599, label = r2.b, parse = TRUE) +	annotate("text", size = 3, x = 17.5, y = 550, label = pval.b, parse = TRUE) +	annotate("text", size = 4, x = 13.1, y = 600, label = "(b)") +	theme(axis.title.x = element_text(vjust = 0.1)) + #axis title closer to y-axis	theme(axis.title.y = element_text(vjust = 0.7))  #axis title further from x-axis#open PDF device, specify file name, window size and font sizepdf(file = "ggplot2 MAT_C_Fig1_horiz.pdf", width = 7, height = 3.5)#plot both graphs on one pagelibrary(gridExtra) #to arrange graphsgri
-d.arrange(p1, p2, ncol = 2)dev.off() #close connection to hard drive#save graph page as .pdf
-p2 <- ggplot(Cstorage, aes(MAT, CWDlitter)) + #figure with MAT on x-axis and  on y-axis	geom_point(size = 3) + #scatterplot with black circles	xlab(my.xlab.b) + #custom x-axis label	ylab(my.ylab.b) + #custom y-axis label	theme_bw() + #black & white theme with faint gridlines	geom_smooth(method = lm, colour = 'black', se = FALSE) + # regression line with NO 95% conf. region 	annotate("text", size = 3, x = 17.6, y = 150, label = r2.b, parse = TRUE) +	annotate("text", size = 3, x = 17.6, y = 145, label = pval.b, parse = TRUE) +	annotate("text", size = 4, x = 13.1, y = 150, label = "(b)") +	theme(axis.title.x = element_text(vjust = 0.05)) + #axis title further from x-axis	theme(axis.title.y = element_text(vjust = 0.7))  #axis title closer to y-axis
-my.ylab.a = expression(atop(paste("Soil carbon/detritus carbon (%)")))
-my.ylab.a
-my.xlab.a = expression(atop(paste("Mean annual temperature (", degree, "C)")))
-my.xlab.a
-inv = function(x) { return(1/x) }
-inv = function(x) 1 / x
-x = 1:200
-x
-y= inv(x)
-y
-plot(x, y, ylab = "1/x", type = "1", las=1, main = "inverse funciton")
-plot(x, y, ylab = "1/x", bty = "1", las=1, main = "inverse funciton")
-plot(x, y, ylab = "1/x", type="1", bty = "1", las=1, main = "inverse function")
-plot(x, y, ylab = "1/x", type="l", bty = "l", las=1, main = "inverse function")
-f_exp = function(a, x) exp(-(10^a)*x)x = 0:200y1 = f_exp(-1, x) ; y2 = f_exp(-2, x) par(mgp = c(2.5,1,0))layout(matrix(1:2, 1, 2))plot(x, y1, ylab= expression(exp(-10^a)*x), type= "l", bty = "l", las = 1, main = "a=-1")plot(x, y2, ylab="", type= "l", bty = "l", las = 1, main = "a=-2")
-mtcars
-t.mtcars <- t(mtcars)
-t.mtcars
-summary(mtcars)
-mtcars
-t.mtcars <- t(mtcars)
-head(t.mtcars)
-Linear regression of Faith's PD as a function of MATpd.mod <- lm(pd ~ MAT, data = diversity)#Linear regression of estimated spp. richness (Chao1) as a function of MATchao.mod <- lm(chao1 ~ MAT, data = diversity)#Linear regression of observed spp. richness as a function of MATobs.mod <- lm(obsrich ~ MAT, data = diversity)#custom x-axis label for figuresmy.xlab = expression(paste("Mean annual temperature (", degree, "C)"))require(ggplot2)
-pd.fig <- ggplot(diversity, aes(MAT, pd)) +	geom_point(size = 2.8) + 	geom_errorbar(aes(ymax = pd + pd.ci, ymin = pd - pd.ci), width = 0.08) +	scale_y_continuous(limits = c(20,80), breaks = c(20,40,60,80)) +	xlab(my.xlab) +	ylab("Bacterial phylogenetic diversity")
-require(vegan)
-iris
-require(vegan)
-mite
-summary(mite)
-require(vegan)
-dune
-summary(varechem)
-data(varechem)
-varechem
-data(dune)
-dune
-require(vegan)
-data(dune)
-metaMDS(dune)
-plot
-duneMDS <- metaMDS(dune)
-duneMDS
-plot(duneMDS)
-require(vegan)
-data(dune.env)
-dune.env
-require(vegan)
-data(dune.env)
-dune.env
-require(vegan)
-data(dune)
-data(dune.env)
-dune.mds <- metaMDS(comm = dune, env = dune.envs)
-dune.mds <- metaMDS(comm = dune, env = dune.envs, wascores = FALSE)
-plot(dune.mds)
-require(vegan)
-library(vegan)#
-library(ggplot2)#
-data(dune)#
-#
-# calculate distance for NMDS#
-NMDS.log<-log(dune+1)#
-sol <- metaMDS(NMDS.log)#
-#
-# Create meta data for grouping#
-MyMeta = data.frame(#
-  sites = c(2,13,4,16,6,1,8,5,17,15,10,11,9,18,3,20,14,19,12,7),#
-  amt = c("hi", "hi", "hi", "md", "lo", "hi", "hi", "lo", "md", "md", "lo", #
-      "lo", "hi", "lo", "hi", "md", "md", "lo", "hi", "lo"),#
-row.names = "sites")
-MyMeta
-plot(sol$points, col = MyMeta$amt)
-NMDS.log
-same in ggplot2#
-NMDS = data.frame(MDS1 = sol$points[,1], MDS2 = sol$points[,2])#
-ggplot(data = NMDS, aes(MDS1, MDS2)) + #
-  geom_point(aes(data = MyMeta, color = MyMeta$amt))
-vec.sp<-envfit(sol$points, NMDS.log, perm=1000)#
-plot(vec.sp, p.max=0.1, col="blue")
-library(vegan)#
-library(ggplot2)#
-data(dune)#
-#
-# calculate distance for NMDS#
-NMDS.log<-log(dune+1)#
-sol <- metaMDS(NMDS.log)#
-#
-# Create meta data for grouping#
-MyMeta = data.frame(#
-  sites = c(2,13,4,16,6,1,8,5,17,15,10,11,9,18,3,20,14,19,12,7),#
-  amt = c("hi", "hi", "hi", "md", "lo", "hi", "hi", "lo", "md", "md", "lo", #
-      "lo", "hi", "lo", "hi", "md", "md", "lo", "hi", "lo"),#
-row.names = "sites")#
-#
-# plot NMDS using basic plot function and color points by "amt" from MyMeta#
-plot(sol$points, col = MyMeta$amt)
-vec.sp<-envfit(sol$points, NMDS.log, perm=1000)#
-plot(vec.sp, p.max=0.1, col="blue")
-require(vegan)
-data(varespec)#
-data(varechem)#
-library(MASS)#
-ord <- metaMDS(varespec)#
-(fit <- envfit(ord, varechem, perm = 999))#
-scores(fit, "vectors")#
-plot(ord)#
-plot(fit)#
-plot(fit, p.max = 0.05, col = "red")#
-## Adding fitted arrows to CCA. We use "lc" scores, and hope#
-## that arrows are scaled similarly in cca and envfit plots#
-ord <- cca(varespec ~ Al + P + K, varechem)#
-plot(ord, type="p")#
-fit <- envfit(ord, varechem, perm = 999, display = "lc")#
-plot(fit, p.max = 0.05, col = "red")
-library(vegan)#
-library(ggplot2)#
-data(dune)#
-#
-# calculate distance for NMDS#
-NMDS.log<-log(dune+1)#
-sol <- metaMDS(NMDS.log)#
-#
-# Create meta data for grouping#
-MyMeta = data.frame(#
-  sites = c(2,13,4,16,6,1,8,5,17,15,10,11,9,18,3,20,14,19,12,7),#
-  amt = c("hi", "hi", "hi", "md", "lo", "hi", "hi", "lo", "md", "md", "lo", #
-      "lo", "hi", "lo", "hi", "md", "md", "lo", "hi", "lo"),#
-row.names = "sites")#
-#
-# plot NMDS using basic plot function and color points by "amt" from MyMeta#
-plot(sol$points, col = MyMeta$amt)#
-#
-# same in ggplot2#
-NMDS = data.frame(MDS1 = sol$points[,1], MDS2 = sol$points[,2])#
-ggplot(data = NMDS, aes(MDS1, MDS2)) + #
-  geom_point(aes(data = MyMeta, color = MyMeta$amt))
-MyMeta
-?reshape
-Data <- data.frame(#
-    X = sample(1:10),#
-    Y = sample(c("yes", "no"), 10, replace = TRUE)#
-)
-Data
-rarefy <- ddply(rarefy.summary, c("site", "sequences", "MAT"), summarise,	N    = length(OTU),	mean = mean(OTU),	sd   = sd(OTU),	se   = sd / sqrt(N)	)
-leg.title2 <- expression(MAT, [degree] C)
-cite()
-citation()
-citation("pkgname")
-citation('pkgname')
-'citation("pkgname")'
-require(vegan)
-require(swirl)
-swirl()
-require(ggplot2)
-?reorder
-rm(list=ls())	#clears memory#
-#
-#DATA:#
-t=c(30,60,100,150,200,250,300,350,400,500,600,700,1000,1500,30,60,100,150,200,250,300,350,400,500,600,700,1000,1500,30,60,100,150,200,250,300,350,400,500,600,700,1000,1500,30,60,100,150,200,250,300,350,400,500,600,700,1000,1500,30,60,100,150,200,250,300,350,400,500,600,700,1000,1500)#
-rep=c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5)#
-Mt=c(0.8348,0.7269,0.273,0.6786,0.5165,0.3807,0.2635,0.4139,0.2480,0,0.0347,0.0602,0.0135,0.0561,0.9327,0.7803,0.825,0.4272,0.3188,0.3545,0.4112,0.1906,0.2957,0.1460,0.0909,0,0.1159,0.0699,1,0.7401,1,0.2981,0.4296,0.5585,0.1113,0.176,0.1191,0.2580,0.0417,0.1013,0.1932,0.2583,0.9110,0.8791,0.6680,0.8651,0.4715,0.3278,0,0,0.1273,0.0304,0,0,0,0.2644,0.6649,0.7160,0.764,0.7455,0.4342,0.6268,0.4569,0.1907,0,0.496,0,0,0.2446,0)#
-#
-#bind above data vectors together as columns in a data frame:#
-deco=data.frame(cbind(t,rep,Mt)) #
-#
-#look at row headings and first few lines of data in data frame:#
-head(deco)
-require(dplyr)
-library(dplyr)
-require(dplyr)
-install.packages("dplyr")
-install.package("gridExtra")
-install.packages("gridExtra")
-install.packages("ggthemes")
-lsp(ggplot2, "geom")
-library(ggplot2)
-d2 <- diamonds[sample(1:dim(diamonds)[1], 1000),]
-p <- ggplot(d2, carat, price, fill = color) + geom_point()
-p <- ggplot(d2, x = carat, y = price, fill = color) + geom_point()
-p
-p <- ggplot(d2, aes(x = carat, y = price), color = color)) + geom_point()
-p <- ggplot(data = d2, aes(x = carat, y = price, color = color)) + geom_point()
-p
-ggthemes
-library(ggthemes)
-ggthemes
-summary(ggthemes)
-themes
-library(ggthemes)
-lsp(ggthemes)
-Isp(ggthemes)
-library(ggthemes)
-old.packages
-old.packages()
-require(knitr)
-require(markdown)
-setwd(Users/Selmants/Documents)
-setwd(/Users/Selmants/Documents)
-setwd(User/Selmants/Documents)
-setwd("User/Selmants/Documents/RebeccaCR/data/base)
-)
-")"
-")
-load.packages(tidyr)
-library(tidyr)
-library(dplyr)
-head(iris)
-library(dplyr)
-require(dplyr)
-iris %>% head
-install.packages("dplyr", dependencies = TRUE)
-library(dplyr)
-iris %>% filter (Sepal.length <= 5)
-iris %>% filter(Sepal.Length <= 5)
-iris %>% filter(Sepal.Length <= 5) %>% select(Species) %>% head
-x <- iris %>%
-group_by(Species) %>%
-summarise(smallest_sepal = min(Sepal.Length), largest_sepal = max(Sepal.Length))
-x
-y <- iris %>% group_by(Species) %>% summarise(sample_size = n())
-head (y)
-y <- iris %>% mutate(sample_size = n())
-y
-y <- iris %>% %>% group_by(Species) %>% mutate(sample_size = n())
-y <- iris %>% group_by(Species) %>% mutate(sample_size = n())
-head(y)
-iris <- tbl_df(iris) # so it prints a little nicer#
-select(iris, starts_with("Petal"))
-library(dplyr)#
-library(ggplot2)#
-#
-flights <- tbl_df(read.csv("http://inundata.org/flights.csv", stringsAsFactors = FALSE))#
-flights$date <- as.Date(flights$date)#
-#
-weather <- tbl_df(read.csv("http://inundata.org/weather.csv", stringsAsFactors = FALSE))#
-weather$date <- as.Date(weather$date)#
-#
-planes <- tbl_df(read.csv("http://inundata.org/planes.csv", stringsAsFactors = FALSE))#
-#
-airports <- tbl_df(read.csv("http://inundata.org/airports.csv", stringsAsFactors = FALSE))
-location <- airports %>% #
-  select(dest = iata, name = airport, lat, long)
-names(airports)
-head(location)
-library(ggplot2)
-delays <- flights %>%#
-  group_by(dest) %>%#
-  summarise(arr_delay = mean(arr_delay, na.rm = TRUE), n = n()) %>%#
-  arrange(desc(arr_delay)) %>%#
-  inner_join(location)
-head(delays)
-p <- ggplot(delays, aes(long, lat)) + #
-  borders("state") + #
-  geom_point(aes(colour = arr_delay), size = 5, alpha = 0.9) + #
-  scale_colour_gradient2() +#
-  coord_quickmap()
-load.packages("maps", dependencies = TRUE)
-install.packages("maps", dependencies = TRUE)
-p <- ggplot(delays, aes(long, lat)) + #
-  borders("state") + #
-  geom_point(aes(colour = arr_delay), size = 5, alpha = 0.9) + #
-  scale_colour_gradient2() +#
-  coord_quickmap()
-p
-install.packages("tidyr", dependencies = TRUE)
-preg <- read.csv("http://inundata.org/preg.csv", header = TRUE)
-head(preg)
-preg %>% gather(column_names_as_variable, values, which_columns)
-require(tidyr)
-preg %>% gather(column_names_as_variable, values, which_columns)
-preg %>% gather(treatment_name, sample_size, 2:3)
-preg %>% gather(treatment_name, sample_size, 2:3) %>% mutate(treatment_name = gsub("treatment", "", treatment_name))
-sessionInfo()
-require(ggplot2, dplyr, tidyr)
-require(tidyr)
-libary(ggplot2)
-library(ggplot2)
-library(dplyr)
-hello_world <- function() {}
-hello_world <- function() {
-print("Hello, World!")
-}
-result
-result <- hello_world()
-result
-hello_world <- function() {#
-+ print("Hello, World!")#
-+ }
-hello_world <- function() {#
-print("Hello, World!")#
-}
-result <- hello_world()
-hello_world
-result
-print(result)
-getPercent <- function( value, pct ) {#
-    result <- value * ( pct / 100 )#
-    return( result )#
-}#
-#
-result <- getPercent( 10, 110 )#
-print( result )
-result
-# error codes#
-INVALID_PARAMETER <- -1000000#
-#
-getPercent <- function( value, pct ) {#
-    result <- INVALID_PARAMETER#
-    if( pct <= 0 ) {#
-        #print( "getPercent - param 2 <= 0" )#
-        return( result )#
-    }#
-#
-    result <- value * ( pct / 100 )#
-    return( result )#
-}#
-#
-# this should print out 11#
-result <- getPercent( 10, 110 )#
-if( result == INVALID_PARAMETER ) {#
-    cat( sprintf( "getPercent Failed - %d\n", result ) )#
-} else {#
-    print( result )#
-}#
-#
-# this should result in an error message#
-result <- getPercent( 10, -2 )#
-if( result == INVALID_PARAMETER ) {#
-    cat( sprintf( "getPercent Failed - %d\n", result ) )#
-} else {#
-    print( result )#
-}
-library(tidyr)
-?trycatch()
-??trycatch
-require(tidyr)
-vignette("tidy-data")
-#calculate mean annual percent change in runoff for CA from 1903-2014ro.annual <- ro.tidy %>% group_by(year) %>% summarise(annual.pctchnge = mean(pct.change))p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_smooth()
-##Percent Change in California Runoff##Paul Selmants##July 29, 2014library(dplyr)library(ggplot2)library(tidyr)#load .csv file with CA runoff data from 1903-2014 in mm/drunoff <- read.csv("usgs_ca.csv")#Calculate mean runoff from 1903-2014mean.ro <- mean(runoff$runoff_mm_d) #Calculate % change in runoff from mean and separate date into year and monthro.tidy <- runoff %>% mutate(pct.change = (runoff_mm_d - mean.ro)/mean.ro*100) %>%            separate(date, into = c("year", "month"), 4)#calculate mean annual percent change in runoff for CA from 1903-2014ro.annual <- ro.tidy %>% group_by(year) %>% summarise(annual.pctchnge = mean(pct.change))p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_smooth()
-##Percent Change in California Runoff##Paul Selmants##July 29, 2014library(dplyr)library(ggplot2)library(tidyr)#load .csv file with CA runoff data from 1903-2014 in mm/drunoff <- read.csv("usgs_ca.csv")#Calculate mean runoff from 1903-2014mean.ro <- mean(runoff$runoff_mm_d)
-##Percent Change in California Runoff##Paul Selmants##July 29, 2014rm(list=ls()) # reset R's brainlibrary(dplyr)library(ggplot2)library(tidyr)#load .csv file with CA runoff data from 1903-2014 in mm/drunoff <- read.csv("usgs_ca.csv")#Calculate mean runoff from 1903-2014mean.ro <- mean(runoff$runoff_mm_d) #Calculate % change in runoff from mean and separate date into year and monthro.tidy <- runoff %>% mutate(pct.change = (runoff_mm_d - mean.ro)/mean.ro*100) %>%            separate(date, into = c("year", "month"), 4)#calculate mean annual percent change in runoff for CA from 1903-2014ro.annual <- ro.tidy %>% group_by(year) %>% summarise(annual.pctchnge = mean(pct.change))p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_smooth()
-p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_point() = geom_line()
-install.package('raster')
-install.packages('raster')
-install.packages('maps')
-setwd("/Users/Selmants/Documents/NCEAS_OSS/Macro_Drought/Drought_CA/runoff")
-##Percent Change in California runoff relative to long-term average##Paul Selmants##July 29, 2014rm(list=ls()) # reset R's brainlibrary(dplyr)library(ggplot2)library(tidyr)#load .csv file with CA runoff data from 1903-2014 in mm/drunoff <- read.csv("usgs_ca.csv", stringsAsFactors = FALSE)#Calculate mean runoff from 1903-2014mean.ro <- mean(runoff$runoff_mm_d) #Calculate % change in runoff from mean, separate date column into year and month columnsro.tidy <- runoff %>% mutate(pct.change = (runoff_mm_d - mean.ro)/mean.ro*100) %>%    separate(date, into = c("year", "month"), 4)#calculate mean annual percent change in runoff for CA from 1903-2014ro.annual <- ro.tidy %>%     group_by(year) %>%     summarise(annual.pctchnge = mean(pct.change)) %>%    transform(year = as.numeric(year))p <- ggplot(ro.annual, aes(year, annual.pctchnge, group = 1)) +    geom_line(colour = 'blue', size = 0.8) +    xlab("Year") +    ylab("Change in runoff (%)") +    theme_bw() +     scale_x_continuous(limits = c(1996, 2014),     breaks = c(1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014))  +    scale_y_continuous(limits = c(-70, 105),     breaks = c(-60, -40, -20, 0, 20, 40, 60, 80, 100)) +    geom_hline(yintercept = 0, linetype = "dashed", size = 0.2) +    theme(axis.title.x = element_text(vjust = 0.05))
-p
-ggsave('CA_runoff.png', width = 7, height = 4)

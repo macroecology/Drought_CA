@@ -1,0 +1,313 @@
+p <- ggplot(data = d2, aes(x = carat, y = price, color = color)) + geom_point()
+p
+ggthemes
+library(ggthemes)
+ggthemes
+summary(ggthemes)
+themes
+library(ggthemes)
+lsp(ggthemes)
+Isp(ggthemes)
+library(ggthemes)
+old.packages
+old.packages()
+require(knitr)
+require(markdown)
+setwd(Users/Selmants/Documents)
+setwd(/Users/Selmants/Documents)
+setwd(User/Selmants/Documents)
+setwd("User/Selmants/Documents/RebeccaCR/data/base)
+)
+")"
+")
+load.packages(tidyr)
+library(tidyr)
+library(dplyr)
+head(iris)
+library(dplyr)
+require(dplyr)
+iris %>% head
+install.packages("dplyr", dependencies = TRUE)
+library(dplyr)
+iris %>% filter (Sepal.length <= 5)
+iris %>% filter(Sepal.Length <= 5)
+iris %>% filter(Sepal.Length <= 5) %>% select(Species) %>% head
+x <- iris %>%
+group_by(Species) %>%
+summarise(smallest_sepal = min(Sepal.Length), largest_sepal = max(Sepal.Length))
+x
+y <- iris %>% group_by(Species) %>% summarise(sample_size = n())
+head (y)
+y <- iris %>% mutate(sample_size = n())
+y
+y <- iris %>% %>% group_by(Species) %>% mutate(sample_size = n())
+y <- iris %>% group_by(Species) %>% mutate(sample_size = n())
+head(y)
+iris <- tbl_df(iris) # so it prints a little nicer#
+select(iris, starts_with("Petal"))
+library(dplyr)#
+library(ggplot2)#
+#
+flights <- tbl_df(read.csv("http://inundata.org/flights.csv", stringsAsFactors = FALSE))#
+flights$date <- as.Date(flights$date)#
+#
+weather <- tbl_df(read.csv("http://inundata.org/weather.csv", stringsAsFactors = FALSE))#
+weather$date <- as.Date(weather$date)#
+#
+planes <- tbl_df(read.csv("http://inundata.org/planes.csv", stringsAsFactors = FALSE))#
+#
+airports <- tbl_df(read.csv("http://inundata.org/airports.csv", stringsAsFactors = FALSE))
+location <- airports %>% #
+  select(dest = iata, name = airport, lat, long)
+names(airports)
+head(location)
+library(ggplot2)
+delays <- flights %>%#
+  group_by(dest) %>%#
+  summarise(arr_delay = mean(arr_delay, na.rm = TRUE), n = n()) %>%#
+  arrange(desc(arr_delay)) %>%#
+  inner_join(location)
+head(delays)
+p <- ggplot(delays, aes(long, lat)) + #
+  borders("state") + #
+  geom_point(aes(colour = arr_delay), size = 5, alpha = 0.9) + #
+  scale_colour_gradient2() +#
+  coord_quickmap()
+load.packages("maps", dependencies = TRUE)
+install.packages("maps", dependencies = TRUE)
+p <- ggplot(delays, aes(long, lat)) + #
+  borders("state") + #
+  geom_point(aes(colour = arr_delay), size = 5, alpha = 0.9) + #
+  scale_colour_gradient2() +#
+  coord_quickmap()
+p
+install.packages("tidyr", dependencies = TRUE)
+preg <- read.csv("http://inundata.org/preg.csv", header = TRUE)
+head(preg)
+preg %>% gather(column_names_as_variable, values, which_columns)
+require(tidyr)
+preg %>% gather(column_names_as_variable, values, which_columns)
+preg %>% gather(treatment_name, sample_size, 2:3)
+preg %>% gather(treatment_name, sample_size, 2:3) %>% mutate(treatment_name = gsub("treatment", "", treatment_name))
+sessionInfo()
+require(ggplot2, dplyr, tidyr)
+require(tidyr)
+libary(ggplot2)
+library(ggplot2)
+library(dplyr)
+hello_world <- function() {}
+hello_world <- function() {
+print("Hello, World!")
+}
+result
+result <- hello_world()
+result
+hello_world <- function() {#
++ print("Hello, World!")#
++ }
+hello_world <- function() {#
+print("Hello, World!")#
+}
+result <- hello_world()
+hello_world
+result
+print(result)
+getPercent <- function( value, pct ) {#
+    result <- value * ( pct / 100 )#
+    return( result )#
+}#
+#
+result <- getPercent( 10, 110 )#
+print( result )
+result
+# error codes#
+INVALID_PARAMETER <- -1000000#
+#
+getPercent <- function( value, pct ) {#
+    result <- INVALID_PARAMETER#
+    if( pct <= 0 ) {#
+        #print( "getPercent - param 2 <= 0" )#
+        return( result )#
+    }#
+#
+    result <- value * ( pct / 100 )#
+    return( result )#
+}#
+#
+# this should print out 11#
+result <- getPercent( 10, 110 )#
+if( result == INVALID_PARAMETER ) {#
+    cat( sprintf( "getPercent Failed - %d\n", result ) )#
+} else {#
+    print( result )#
+}#
+#
+# this should result in an error message#
+result <- getPercent( 10, -2 )#
+if( result == INVALID_PARAMETER ) {#
+    cat( sprintf( "getPercent Failed - %d\n", result ) )#
+} else {#
+    print( result )#
+}
+library(tidyr)
+?trycatch()
+??trycatch
+require(tidyr)
+vignette("tidy-data")
+#calculate mean annual percent change in runoff for CA from 1903-2014ro.annual <- ro.tidy %>% group_by(year) %>% summarise(annual.pctchnge = mean(pct.change))p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_smooth()
+##Percent Change in California Runoff##Paul Selmants##July 29, 2014library(dplyr)library(ggplot2)library(tidyr)#load .csv file with CA runoff data from 1903-2014 in mm/drunoff <- read.csv("usgs_ca.csv")#Calculate mean runoff from 1903-2014mean.ro <- mean(runoff$runoff_mm_d) #Calculate % change in runoff from mean and separate date into year and monthro.tidy <- runoff %>% mutate(pct.change = (runoff_mm_d - mean.ro)/mean.ro*100) %>%            separate(date, into = c("year", "month"), 4)#calculate mean annual percent change in runoff for CA from 1903-2014ro.annual <- ro.tidy %>% group_by(year) %>% summarise(annual.pctchnge = mean(pct.change))p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_smooth()
+##Percent Change in California Runoff##Paul Selmants##July 29, 2014library(dplyr)library(ggplot2)library(tidyr)#load .csv file with CA runoff data from 1903-2014 in mm/drunoff <- read.csv("usgs_ca.csv")#Calculate mean runoff from 1903-2014mean.ro <- mean(runoff$runoff_mm_d)
+##Percent Change in California Runoff##Paul Selmants##July 29, 2014rm(list=ls()) # reset R's brainlibrary(dplyr)library(ggplot2)library(tidyr)#load .csv file with CA runoff data from 1903-2014 in mm/drunoff <- read.csv("usgs_ca.csv")#Calculate mean runoff from 1903-2014mean.ro <- mean(runoff$runoff_mm_d) #Calculate % change in runoff from mean and separate date into year and monthro.tidy <- runoff %>% mutate(pct.change = (runoff_mm_d - mean.ro)/mean.ro*100) %>%            separate(date, into = c("year", "month"), 4)#calculate mean annual percent change in runoff for CA from 1903-2014ro.annual <- ro.tidy %>% group_by(year) %>% summarise(annual.pctchnge = mean(pct.change))p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_smooth()
+p <- ggplot(ro.annual, aes(year, annual.pctchnge)) +    geom_point() = geom_line()
+install.package('raster')
+install.packages('raster')
+install.packages('maps')
+library(devtools); install_version("lmPerm",version="1.1-2")
+library(devtools)
+getwd()
+list.files(wd)
+workd <-"/Users/Selmants/Documents/Hawaii Projects/MAT Bacteria"
+list.files(workd)
+library(nlme)
+library(RandomFields)
+install.packages("Random.Fields")
+install.packages(RandomFields)
+install.packages("RandomFields")
+library(spdep)
+install.packages("spdep")
+library(RandomFields)
+library(spdep)
+install.packages("foreign")
+library(foreign)
+install.packages("spatstat")
+libary(spatstat)
+library(spatstat)
+install.packages("deldir")
+library(deldir)
+dx <- dy <- 0.5           ## grid spacingxmax <- ymax <- 10        ## grid max (could also set ymin)
+xvec <- seq(0,xmax,by=dx)yvec <- seq(0,ymax,by=dy)ddgrid <- expand.grid(x=xvec,y=yvec) ## all x*y combinations
+plot(y~x, data=ddgrid)
+npts<- 100
+dd<-data.frame(x=runif(npts, max=xmax),
+y=runif(npts, max=ymax))
+plot(y~x, data = dd, xlim=c(0,10), ylim=c(0,10))
+mod01 <- list(cif="strauss", ## specify point process; see ?rStrauss par=list(beta=2, ## intensity (average density)                       gamma=0.2,  ## strength of avoidancer=0.7), ## radius of avoidance w=c(0,10,0,10)) ## square window; x={0,10}, y={0,10}
+modO1 <- list(cif="strauss",
+par=list(beta=2,
+gamma=0.2,
+r=0.7),
+w=c(0,10,0,10))
+dd <- data.frame(x=mm$x, y=mm$y)
+mm <- rmh(model = modO1,
+start=list(n.start=200),
+control=list(nrep=5000),
+verbose=FALSE)
+dd <- data.frame(x=mm$x, y=mm$y)
+plot(y~x, data=dd, xlim=c(0,10),ylim=c(0,10))
+tpars <- list(int=1, x=2, y=4)
+library(ggplot2)
+dd <- transform(dd, rO=tpars$int + tpars$x*x+tpars$y*y)
+ggplot(dd, aes(x,y,colour=rO)) + geom_point(size=4)
+ggplot(dd, aes(x,y,size=rO)) + geom_point()
+ggplot(dd,aes(y,r0,colour=xcat))+geom_line()
+ggplot(dd,aes(y,rO,colour=xcat))+geom_line()
+(dd$xcat <- cut_interval(dd$x,5))
+ggplot(dd,aes(y,rO,colour=xcat))+geom_line()
+ddgrid <- transform(ddgrid,r0=tpars$int + tpars$x*x+tpars$y*y)
+ggplot(ddgrid,aes(x,y,fill=r0))+geom_tile()
+dd$precip <- rnorm(nrow(dd),mean=8,sd=2)
+dd$precip <- rnorm(nrow(dd),mean=8,sd=2)dd$r1 <- dd$r0 + 1.5*dd$precip ## effect of covariate on response
+dd$precip <- rnorm(nrow(dd), mean=8,sd=2)
+dd$r1 <- dd$rO + 1.5*dd$precip
+m <- RMgauss(var=4, scale=1.5)+RMnugget(var=0.5)
+ss<-RFsimulate(m,x=dd$x,y=dd$y)
+plot(ss)
+dd$r2 <- dd$r1 + ss@data$variable1
+plot(ss)
+dd$r3 <- rpois(nrow(dd),dd$r2/10)
+ggplot(dd,aes(x,y,colour=r3))+geom_point(size=4)
+ggplot(dd,aes(precip,r3))+geom_point()+ geom_smooth(method="glm",family=poisson)
+detach("package:RandomFields")
+library(spdep)
+nyfile <- system.file("etc/misc/nydata.dbf", package = 'spdep')
+nydata0 <- read.dbf(nyfile)
+head(nydata0)
+ggplot(dd,aes(precip,r3))+geom_point()+ geom_smooth(method="glm",family=poisson)
+ggplot(nydata0,aes(x=X,y=Y,size=PROPCAS,colour=PEXPOSURE))+ geom_point(alpha=0.5)
+apropos("(^nb2|2nb$)") ## convert to or from neighbour-lists apropos("(^listw2|2listw$)") ## convert to or from weight-lists methods(class="nb") ## methods for neighbour-lists methods(class="listw")
+library(deldir)
+nynb <- tri2nb(nycoord)
+nydata <- nydata0 ## make a copy to turn into a 'sp' object coordinates(nydata) <- c("X", "Y") ## set coordinatesnycoord <- coordinates(nydata)
+install.packages("sos")
+install.packages("rpart")
+install.packages("cu.summary")
+library(rpart)
+library(cu.summary)
+summary(cu.summary)
+(fit <- rpart(Mileage~Price + Country + Reliability + Type, ))
+(fit <- rpart(Mileage~Price + Country + Reliability + Type, data = cu.summary, method = 'anova', xval = 100))
+printcp(fit)
+plotcp(fit)
+summary(fit)
+plot(fit)
+text(fit)
+summary(pfit)
+best.tree <- which.min(fit$cptable[,"xerror"])
+cpval <- fit$cptable[best.tree,"CP"]
+pfit<-prune(fit, cp=cpval)
+plot(pfit)
+text(pfit)
+summary(pfit)
+dfit <- rpart(Mileage~. , method='anova', maxdepth=2, data=cu.summary)
+plot(dfit)
+text(dfit)
+summary(dfit)
+pfit
+summary(pfit)
+pfit
+summary(pfit)
+dift
+dfit
+dotchart(predict(dfit))
+library(ade4)
+install.packages("ade4")
+install.packages('doubs')
+library(ade4)
+data(doubs)
+env <- doubs$env
+spe <- doubs$fish
+head(doubs)
+library(vegan)
+install.packages("vegan")
+spe.norm <- as.matrix(decostand(spe, "hellinger"))
+library(vegan)
+spe.norm <- as.matrix(decostand(spe, "hellinger"))
+install.packages("mvpart")
+library(mvpart)
+spe.ch.mvpart<-(spe.norm ~ ., env,
+spe.ch.mvpart<-(spe.norm ~ . , env,
+spe.ch.mvpart<-(spe.norm ~ ., env, xv="lse", xval=nrow(spe), xvmult=100, which=4)
+spe.ch.mvpart <- mvpart(spe.norm ~ ., env, xv="ise", xval=nrow(spe), xvmult=100, which=4)
+spe.norm <- as.matrix(decostand(spe, 'hellinger'))
+library(ade4)
+data(doubs)
+head(doubs)
+env <- doubs$env
+spe <- doubs$fish
+library(vegan)
+spe.norm <- as.matrix(decostand(spe, "hellinger"))
+library(mvpart)
+spe.ch.mvpart<-(spe.norm ~ ., env, xv="lse",xval=nrow(spe), xvmult=100, which=4)
+spe.ch.mvpart<-mvpart(spe.norm ~ ., env, xv="lse",xval=nrow(spe), xvmult=100, which=4)
+spe.ch.mvpart<-mvpart(spe.norm ~ ., env, xv="1se",xval=nrow(spe), xvmult=100, which=4)
+summary(spe.ch.mvpart)
+printcp(spe.ch.mvpart)
+plotcp(spe.ch.mvpart)
+##Water storage in California reservoirs ##Paul Selmants##August 4, 2014rm(list=ls()) # reset R's brain
+library(ggplot2)library(tidyr)
+#load .csv file of CA reservoir water storage datastorage <- read.csv("ca_reservoir.csv", stringsAsFactors = FALSE)#Calculate %change in storage from historical average and from total capacitystorage.stats <- storage %>% mutate(pct.hist = (storage_june - hist_avg)/hist_avg*100) %>%    mutate(pct.cap = (storage_june/capacity)*100)
+##Water storage in California reservoirs ##Paul Selmants##August 4, 2014rm(list=ls()) # reset R's brainlibrary(dplyr)library(ggplot2)
+setwd("/Users/Selmants/Documents/NCEAS_OSS/Macro_Drought/Drought_CA/runoff")
+#load .csv file of CA reservoir water storage datastorage <- read.csv("ca_reservoir.csv", stringsAsFactors = FALSE)#Calculate %change in storage from historical average and from total capacitystorage.stats <- storage %>% mutate(pct.hist = (storage_june - hist_avg)/hist_avg*100) %>%    mutate(pct.cap = (storage_june/capacity)*100)p <- ggplot(storage.stats, aes(year, pct.cap, group = 1)) +     geom_line(colour = 'blue', size = 0.8) +    xlab("Year") +    ylab("Reservoir storage (% capacity)") +    theme_bw() +     scale_x_continuous(limits = c(1992, 2014),      breaks = c(1992, 1994, 1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014)) +    scale_y_continuous(limits = c(40,100)) +    theme(axis.title.x = element_text(vjust = 0.05))
+p
+ggsave('CA_reservoir.png', width = 7, height = 4)
