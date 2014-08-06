@@ -56,15 +56,23 @@ for (i in 1:dim (mapas)[3]){
 }
 
 media
-diff
+years<- c(1981:2013)
+write.table (data.frame (years, diff), 
+             "precip_diff.csv", sep=",", row.names=F)
 perc<- (diff*100)/media
 dev.off()
+
 plot (perc, type="l", axes= F, xlim= c(0, 33), 
       col="blue", lty=2, 
       ylab= "% Change in precipitation", xlab="Years")
 abline (h=0, col="grey")
 axis(1, labels=c(1981:2013), at=c(1:33), las=2)
 axis (2)
+
+data<- data.frame (years, percentage_precipitation=perc)
+qplot(years, percentage_precipitation, data = data) +
+  geom_line()
+
 
 library (ggplot2)
 data<- data.frame (Years= c(1981:2013), Diff_precip=diff)
@@ -98,8 +106,6 @@ for (i in 1:dim (mapas)[3]){
 }
 
 res2<- res [-c(which (is.na (res[,3]))),]
-
-
 names (res2)<-c(1981:2013) 
 dim (res2)
 
@@ -113,8 +119,13 @@ for (i in 1:nrow (res2)){
 colnames (trends)<- c("tau", "p")
 trends_maps<- cbind (res2[,c(1:2)], trends)
 head (trends_maps)
+
 tau<- rasterFromXYZ (trends_maps[,c(1:3)])
-plot (tau)
 
 p<- rasterFromXYZ (trends_maps[,c(-3)])
+
+colores<- colorRampPalette(c( "red", "blue"))
+plot (tau, col=colores(100), axes=F, box=F)
 plot (p)
+
+
