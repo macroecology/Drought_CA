@@ -128,4 +128,55 @@ colores<- colorRampPalette(c( "red", "blue"))
 plot (tau, col=colores(100), axes=F, box=F)
 plot (p)
 
+## mahalanobis 
+
+library (stats)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+setwd("C:/Users/visitor/Sara/Drought/Drought_CA/")
+
+#load .csv file with CA runoff data from 1903-2014 in mm/d
+runoff <- read.csv("water/usgs_ca.csv", stringsAsFactors = FALSE)
+head (runoff)
+#Calculate mean runoff from 1903-2014
+mean.ro <- mean(runoff$runoff_mm_d) 
+
+#Calculate % change in runoff from mean, separate date column into year and month columns
+ro.tidy <- runoff %>% mutate(pct.change = (runoff_mm_d - mean.ro)/mean.ro*100) %>%
+  separate(date, into = c("year", "month"), 4) 
+
+storage <- read.csv("water/ca_reservoir.csv", stringsAsFactors = FALSE)
+head (storage)
+head (ro.tidy)
+ro.tidy$year<- as.factor (ro.tidy$year)
+
+run.off<- tapply (ro.tidy$runoff_mm_d, ro.tidy$year, mean)
+which (names (run.off)==1993)
+pdsi<- read.table ("pdsi/scpdsi_avg_year.csv", header=T)
+dim (pdsi)
+names (pdsi)
+
+pdsi.<- pdsi[100:120, 3]
+prism<- data.frame (years, diff)
+precip<- prism [13:33,2]
+length (precip)
+run<- run.off [which (names (run.off)==1993):which (names (run.off)==2013)]
+length (run)
+sto<- storage$storage_june [18:38]
+length (sto)
+
+plot (precip)
+x<- cbind (precip, run, sto, pdsi.)
+Sx <- cov(x)
+maha <- mahalanobis(x, colMeans(x), Sx)
+maha
+
+plot (names (maha), maha, type="l", 
+      axes=F, main="Mahalanobis distances", ylab="distances", 
+      xlab="years")
+axis (1)
+axis (2)
+
 

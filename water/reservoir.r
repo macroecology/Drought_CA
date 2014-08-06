@@ -8,7 +8,8 @@ library(dplyr)
 library(ggplot2)
 
 #load .csv file of CA reservoir water storage data
-storage <- read.csv("ca_reservoir.csv", stringsAsFactors = FALSE)
+storage <- read.csv("water/ca_reservoir.csv", stringsAsFactors = FALSE)
+head (storage)
 
 #Calculate %change in storage from historical average and from total capacity
 storage.stats <- storage %>% mutate(pct.hist = (storage_june - hist_avg)/hist_avg*100) %>%

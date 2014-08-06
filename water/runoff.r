@@ -8,8 +8,10 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 
+setwd("C:/Users/visitor/Sara/Drought/Drought_CA/")
+
 #load .csv file with CA runoff data from 1903-2014 in mm/d
-runoff <- read.csv("usgs_ca.csv", stringsAsFactors = FALSE)
+runoff <- read.csv("water/usgs_ca.csv", stringsAsFactors = FALSE)
 
 #Calculate mean runoff from 1903-2014
 mean.ro <- mean(runoff$runoff_mm_d) 
