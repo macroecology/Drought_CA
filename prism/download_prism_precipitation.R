@@ -40,6 +40,7 @@ mapa<- mask (ras, california)
 mapas<- stack (mapas, mapa)
 }
 
+dim (mapas)
 plot (mapas [[2]], xlim =c(-125, -112), ylim =c(30, 45))
 mean_precip<- mean (mapas)
 plot (mean_precip, xlim =c(-125, -112), ylim =c(30, 45))
@@ -54,8 +55,13 @@ for (i in 1:dim (mapas)[3]){
   diff<- c(diff, dif)
 }
 
-plot (diff, type="l", axes= F, xlim= c(0, 33), 
-      ylab= "Anomalies in precipitation (mm)", xlab="Years")
+media
+diff
+perc<- (diff*100)/media
+dev.off()
+plot (perc, type="l", axes= F, xlim= c(0, 33), 
+      col="blue", lty=2, 
+      ylab= "% Change in precipitation", xlab="Years")
 abline (h=0, col="grey")
 axis(1, labels=c(1981:2013), at=c(1:33), las=2)
 axis (2)
