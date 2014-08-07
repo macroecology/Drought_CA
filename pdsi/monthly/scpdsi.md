@@ -3,8 +3,8 @@ scPDSI
 In this document we show our progress on scPDSI.
 
 ### Objectives: 
-* How bad is current drought? How do drought patterns vary in space and time?
-* What is the spatial and temporal dynamics of drought?
+*How bad is current drought? How do drought patterns vary in space and time?
+*What is the spatial and temporal dynamics of drought?
 
 #### Download the data 
 Why do we need to create a script to download the data?
