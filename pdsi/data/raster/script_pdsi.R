@@ -191,8 +191,7 @@ file.remove(dir(pattern='Rplot'))
 file.copy('output.mp4', paste0(old, 'cft.mp4'), overwrite=TRUE)
 setwd(old)
 
-lm1 <- lm(PROPCAS~PEXPOSURE,weights=POP8,data=nydata0)
-summary(lm1)
+
 
 ##################################################################
 ## Static image
