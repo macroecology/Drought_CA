@@ -5,7 +5,7 @@ In this script we created a png file with monthly values of scPDSI for Californi
 # Script create png files for video of PDSI raster from 2000 to 2014
 # August, 2014
 # NCEAS Group OSS2014 
-# @ajpelu (Antonio J. P??rez)
+# @ajpelu (Antonio J. Perez-Luque)
 # v1.0 
 # Spatial coverage = US
 # Temporal coverage = 2000 - 2014, monthly
